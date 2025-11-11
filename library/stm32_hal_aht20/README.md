@@ -13,7 +13,7 @@
 ### 2. 使用
 1. STM32初始化IIC完成后调用`AHT20_Init()`初始化AHT20
 2. 调用`AHT20_Measure()`可以进行一次测量
-3. 调用`AHT20_Tempurature`()与`AHT20_Humidity()`分别可以获取上次测量时的温度与湿度数据
+3. 调用`AHT20_Temperature`()与`AHT20_Humidity()`分别可以获取上次测量时的温度与湿度数据
 
 ```c
 AHT20_Init();
@@ -22,7 +22,7 @@ char message[50];
 
 while(1){
     AHT20_Measure();
-    temperature = AHT20_Tempurature();
+    temperature = AHT20_Temperature();
     humidity = AHT20_Humidity();
     sprintf(message, "Temperature: %.2f, Humidity: %.2f%%\r\n", temperature, humidity);
     HAL_UART_Transmit(&huart2, (uint8_t *)message, strlen(message), HAL_MAX_DELAY);
