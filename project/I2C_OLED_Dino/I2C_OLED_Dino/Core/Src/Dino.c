@@ -138,7 +138,7 @@ void play() {
 
   int8_t leg = 0;
 
-  static char tmp[30];
+//  static char tmp[30];
 
   for (;;) {
     OLED_NewFrame();
